@@ -32,7 +32,7 @@ class Question extends Component {
     this.setState({
       selectedSegment,
     }, () => {
-      // Ajit - Giving some delay before showing next questions
+      // Ajit - Intentially giving some delay before showing next questions
       // so that user know what selection has been made.
       const timerId = setTimeout(() => {
         this.props.onQuestionAnswered(selectedSegment);
