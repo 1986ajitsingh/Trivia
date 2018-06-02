@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
-import { fetchQuestions } from '../Actions/FetchQuestionsAction'
+import fetchQuestions from '../Actions/FetchQuestionsAction';
 import Loader from '../PresentationalComponents/Loader';
 
 class HomeScreen extends Component {
@@ -50,10 +50,8 @@ class HomeScreen extends Component {
         Alert.alert('Error loading questions. Please try again later.');
         clearTimeout(timerId);
       }, 200);
-    } else {
-      if (nextProps.questions.length > 0) {
-        this.props.navigation.navigate('Quiz', { questionIndex: 0 });
-      }
+    } else if (nextProps.questions.length > 0) {
+      this.props.navigation.navigate('Quiz', { questionIndex: 0 });
     }
   }
 
@@ -109,14 +107,11 @@ const styles = StyleSheet.create({
   },
 })
 
-
-const mapStateToProps = (state) => {
-  return {
-    questions: state.questions,
-    loading: state.loading,
-    error: state.error,
-  };
-};
+const mapStateToProps = state => ({
+  questions: state.questions,
+  loading: state.loading,
+  error: state.error,
+});
 
 const mapDispatchToProps = {
   fetchQuestions,

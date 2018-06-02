@@ -5,10 +5,12 @@ import {
   StyleSheet,
 } from 'react-native';
 import { SegmentedControls } from 'react-native-radio-buttons';
-const Entities = require('html-entities').XmlEntities;
-const entities = new Entities();
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
+
+const Entities = require('html-entities').AllHtmlEntities;
+
+const entities = new Entities();
 
 class Question extends Component {
   static options = ['True', 'False'];

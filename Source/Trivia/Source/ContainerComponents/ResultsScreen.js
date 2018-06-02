@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 import ResultItem from '../PresentationalComponents/ResultItem';
-import { resetQuestions } from '../Actions/ResetQuestionsAction';
+import resetQuestions from '../Actions/ResetQuestionsAction';
 
 class ResultsScreen extends Component {
   static navigationOptions = {
@@ -38,7 +38,7 @@ class ResultsScreen extends Component {
     let totalCorrectAnswers = 0;
     (this.props.questions || []).forEach((question) => {
       if (question.correct_answer === question.given_answer) {
-        totalCorrectAnswers = totalCorrectAnswers + 1;
+        totalCorrectAnswers += 1;
       }
     });
     return totalCorrectAnswers;
@@ -63,7 +63,7 @@ class ResultsScreen extends Component {
           style={styles.button}
           onPress={this.onPressPlayAgain}
         >
-        <Text style = {styles.buttonText}>PLAT AGAIN?</Text>
+          <Text style={styles.buttonText}>PLAT AGAIN?</Text>
         </TouchableHighlight>
       </View>
     );

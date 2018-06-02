@@ -4,10 +4,12 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-const Entities = require('html-entities').XmlEntities;
-const entities = new Entities();
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
+
+const Entities = require('html-entities').AllHtmlEntities;
+
+const entities = new Entities();
 
 class ResultItem extends Component {
   getAnswerText = () => {
@@ -15,7 +17,7 @@ class ResultItem extends Component {
     let answerText = '-';
     if (question.correct_answer === question.given_answer) {
       answerText = '+';
-    } 
+    }
     return answerText;
   }
 

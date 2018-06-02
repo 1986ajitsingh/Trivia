@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Modal,
@@ -9,19 +9,20 @@ import {
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 
-class Loader extends Component {
+class Loader extends PureComponent {
   render() {
     return (
       <Modal
-        transparent={true}
-        animationType={'none'}
+        transparent
+        animationType="none"
         visible={this.props.loading}
-        onRequestClose={() => {console.log('close modal')}}>
+      >
         <View style={styles.modalBackground}>
           <View style={styles.activityIndicatorWrapper}>
             <ActivityIndicator
-              size = "large"
-              animating = {this.props.loading} />
+              size="large"
+              animating={this.props.loading}
+            />
           </View>
         </View>
       </Modal>

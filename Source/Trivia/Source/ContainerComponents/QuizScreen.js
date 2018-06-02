@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 import Question from '../PresentationalComponents/Question';
-import { answerQuestion } from '../Actions/AnswerQuestionAction'
+import answerQuestion from '../Actions/AnswerQuestionAction';
 
 class QuizScreen extends Component {
   static navigationOptions = {
@@ -77,11 +77,9 @@ const styles = StyleSheet.create({
   },
 })
 
-const mapStateToProps = (state) => {
-  return {
-    questions: state.questions,
-  };
-};
+const mapStateToProps = state => ({
+  questions: state.questions,
+});
 
 const mapDispatchToProps = {
   answerQuestion,
