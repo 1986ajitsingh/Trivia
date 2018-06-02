@@ -1,13 +1,13 @@
 import * as ActionTypes from './ActionTypes';
-import * as APIUtils from '../APIUtils';
+import * as APIUtils from '../Utils/APIUtils';
 
-export function fetchQuestions(user) {
-    return {
-      type: ActionTypes.FETCH_QUESTIONS,
-      payload: {
-        request: {
-          url: APIUtils.FETCH_QUESTIONS_URI
-        }
-      }
-    };
-  }
+export function fetchQuestions() {
+  return {
+    type: ActionTypes.FETCH_QUESTIONS,
+    payload: {
+      request: {
+        url: APIUtils.FETCH_QUESTIONS_URI,
+      },
+    },
+  };
+}
