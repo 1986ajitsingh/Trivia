@@ -36,6 +36,6 @@ export default function reducer(state = initialState, action) {
 
 function answerQuestion(questions, questionIndex, answer) {
   const question = (questions || [])[questionIndex];
-  question.given_answer = (answer || '');
+  (question || {}).given_answer = (answer || '');
   return questions;
 }
