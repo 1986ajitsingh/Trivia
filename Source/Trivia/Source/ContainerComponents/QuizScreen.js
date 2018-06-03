@@ -50,6 +50,7 @@ class QuizScreen extends Component {
     const questionIndex = this.props.navigation.getParam('questionIndex');
     return (
       <View style={styles.container}>
+        <Text style={styles.titleText}>{(this.state.question || {}).category}</Text>
         <Question
           questionText={(this.state.question || {}).question}
           onQuestionAnswered={this.handleOnQuestionAnswered}
@@ -69,8 +70,15 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     backgroundColor: StyleUtils.LIGHT_SHADE_COLOR,
   },
+  titleText: {
+    marginTop: 10,
+    textAlign: 'center',
+    color: StyleUtils.DARK_TEXT_COLOR,
+    fontWeight: 'bold',
+    fontSize: 34,
+  },
   text: {
-    marginTop: 20,
+    marginTop: 10,
     textAlign: 'center',
     color: StyleUtils.DARK_TEXT_COLOR,
     fontSize: 30,
