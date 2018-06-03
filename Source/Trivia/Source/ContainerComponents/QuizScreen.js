@@ -30,7 +30,7 @@ class QuizScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const questionIndex = this.props.navigation.getParam('questionIndex');
+    const questionIndex = nextProps.navigation.getParam('questionIndex');
     this.setState({
       question: (nextProps.questions || [])[questionIndex],
     });

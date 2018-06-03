@@ -27,10 +27,10 @@ describe('constructor', () => {
 
 describe('componentWillReceiveProps', () => {
   [
-    [1, '1. nextProps has valid questions', { questions: [1, 2] }],
-    [2, '2. nextProps does not has valid questions', {}],
+    [1, '1. nextProps has valid questions', [1, 2]],
+    [2, '2. nextProps does not has valid questions', undefined],
   ].forEach((testcase) => {
-    const [scenario, testname, nextProps] = testcase;
+    const [scenario, testname, questions] = testcase;
     /* eslint-disable no-undef */
     test(testname, () => {
     /* eslint-enable no-undef */
@@ -47,10 +47,11 @@ describe('componentWillReceiveProps', () => {
         mockGetParamInternal(param);
         return testQuestionIndex;
       });
-      moduleUnderTest.props = {
+      const nextProps = {
         navigation: {
           getParam: mockGetParam,
         },
+        questions,
       };
 
       // Act
