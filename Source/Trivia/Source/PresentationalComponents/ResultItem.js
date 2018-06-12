@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -11,25 +12,37 @@ const Entities = require('html-entities').AllHtmlEntities;
 
 const entities = new Entities();
 
-class ResultItem extends Component {
-  getAnswerText = () => {
-    const question = (this.props.question || {});
-    let answerText = '-';
-    if (question.correct_answer === question.given_answer) {
-      answerText = '+';
-    }
-    return answerText;
+function getAnswerText(questionObj) {
+  const question = (questionObj || {});
+  let answerText = '-';
+  if (question.correct_answer === question.given_answer) {
+    answerText = '+';
   }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.answerText}>{this.getAnswerText()}</Text>
-        <Text style={styles.questionText}>{entities.decode(this.props.question.question)}</Text>
-      </View>
-    );
-  }
+  return answerText;
 }
+
+const ResultItem = props => (
+  <View style={styles.container}>
+    <Text style={styles.answerText}>{getAnswerText(props.question)}</Text>
+    <Text style={styles.questionText}>{entities.decode(props.question.question)}</Text>
+  </View>
+);
+
+ResultItem.propTypes = {
+  question: PropTypes.objectOf({
+    question: PropTypes.string.isRequired,
+    correct_answer: PropTypes.string.isRequired,
+    given_answer: PropTypes.string.isRequired,
+  }),
+};
+
+ResultItem.defaultProps = {
+  question: {
+    question: 'No question input given',
+    correct_answer: 'True',
+    given_answer: 'False',
+  },
+};
 
 const styles = StyleSheet.create({
   container: {

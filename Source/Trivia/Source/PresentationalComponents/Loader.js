@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Modal,
@@ -9,26 +10,26 @@ import {
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 
-class Loader extends PureComponent {
-  render() {
-    return (
-      <Modal
-        transparent
-        animationType="none"
-        visible={this.props.loading}
-      >
-        <View style={styles.modalBackground}>
-          <View style={styles.activityIndicatorWrapper}>
-            <ActivityIndicator
-              size="large"
-              animating={this.props.loading}
-            />
-          </View>
-        </View>
-      </Modal>
-    );
-  }
-}
+const Loader = props => (
+  <Modal
+    transparent
+    animationType="none"
+    visible={props.loading}
+  >
+    <View style={styles.modalBackground}>
+      <View style={styles.activityIndicatorWrapper}>
+        <ActivityIndicator
+          size="large"
+          animating={props.loading}
+        />
+      </View>
+    </View>
+  </Modal>
+);
+
+Loader.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 const styles = StyleSheet.create({
   modalBackground: {

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 import { SegmentedControls } from 'react-native-radio-buttons';
+
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
+import TriviaContainer from '../PresentationalComponents/TriviaContainer';
+import TriviaText from '../PresentationalComponents/TriviaText';
 
 const Entities = require('html-entities').AllHtmlEntities;
 
@@ -43,8 +43,8 @@ class Question extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{entities.decode(this.props.questionText)}</Text>
+      <TriviaContainer>
+        <TriviaText>{entities.decode(this.props.questionText)}</TriviaText>
         <SegmentedControls
           optionStyle={styles.segment}
           tint={StyleUtils.DARK_SHADE_COLOR}
@@ -52,27 +52,21 @@ class Question extends Component {
           onSelection={this.optionSelected}
           selectedOption={this.state.selectedSegment}
         />
-      </View>
+      </TriviaContainer>
     );
   }
 }
 
+Question.propTypes = {
+  questionText: PropTypes.string,
+  onQuestionAnswered: PropTypes.func.isRequired,
+};
+
+Question.defaultProps = {
+  questionText: 'No question text given',
+};
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    backgroundColor: StyleUtils.LIGHT_SHADE_COLOR,
-  },
-  text: {
-    marginTop: 10,
-    textAlign: 'center',
-    justifyContent: 'center',
-    color: StyleUtils.DARK_TEXT_COLOR,
-    fontSize: 30,
-  },
   segment: {
     marginTop: 10,
     marginBottom: 10,

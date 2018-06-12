@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
 import { connect } from 'react-redux';
 
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 import Question from '../PresentationalComponents/Question';
 import answerQuestion from '../Actions/AnswerQuestionAction';
+import TriviaContainer from '../PresentationalComponents/TriviaContainer';
+import TriviaTitleText from '../PresentationalComponents/TriviaTitleText';
+import TriviaText from '../PresentationalComponents/TriviaText';
 
 class QuizScreen extends Component {
   static navigationOptions = {
@@ -29,64 +27,44 @@ class QuizScreen extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const questionIndex = nextProps.navigation.getParam('questionIndex');
+  componentWillMount() {
     this.setState({
-      question: (nextProps.questions || [])[questionIndex],
+      question: (this.props.questions || [])[this.props.questionIndex],
     });
   }
 
-  handleOnQuestionAnswered = (answer) => {
-    const questionIndex = this.props.navigation.getParam('questionIndex');
-    this.props.answerQuestion(questionIndex, answer);
-    if (questionIndex < (this.props.questions.length - 1)) {
-      this.props.navigation.navigate('Quiz', { questionIndex: questionIndex + 1 });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.hasMoreUnansweredQuestions) {
+      this.setState({
+        question: (nextProps.questions || [])[nextProps.questionIndex],
+      });
     } else {
       this.props.navigation.navigate('Result');
     }
   }
 
+  handleOnQuestionAnswered = (answer) => {
+    this.props.answerQuestion(answer);
+  }
+
   render() {
-    const questionIndex = this.props.navigation.getParam('questionIndex');
     return (
-      <View style={styles.container}>
-        <Text style={styles.titleText}>{(this.state.question || {}).category}</Text>
+      <TriviaContainer>
+        <TriviaTitleText>{(this.state.question || {}).category}</TriviaTitleText>
         <Question
           questionText={(this.state.question || {}).question}
           onQuestionAnswered={this.handleOnQuestionAnswered}
         />
-        <Text style={styles.text}>{questionIndex + 1} of {this.props.questions.length}</Text>
-      </View>
+        <TriviaText>{this.props.questionIndex + 1} of {this.props.questions.length}</TriviaText>
+      </TriviaContainer>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    backgroundColor: StyleUtils.LIGHT_SHADE_COLOR,
-  },
-  titleText: {
-    marginTop: 10,
-    textAlign: 'center',
-    color: StyleUtils.DARK_TEXT_COLOR,
-    fontWeight: 'bold',
-    fontSize: 34,
-  },
-  text: {
-    marginTop: 10,
-    textAlign: 'center',
-    color: StyleUtils.DARK_TEXT_COLOR,
-    fontSize: 30,
-  },
-})
-
 const mapStateToProps = state => ({
   questions: state.questions,
+  hasMoreUnansweredQuestions: state.hasMoreUnansweredQuestions,
+  questionIndex: state.questionIndex,
 });
 
 const mapDispatchToProps = {

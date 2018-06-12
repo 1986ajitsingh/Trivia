@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  TouchableHighlight,
-  StyleSheet,
-  Alert,
-} from 'react-native';
+import { Alert } from 'react-native';
 import { connect } from 'react-redux';
 
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 import fetchQuestions from '../Actions/FetchQuestionsAction';
 import Loader from '../PresentationalComponents/Loader';
+import TriviaContainer from '../PresentationalComponents/TriviaContainer';
+import TriviaTitleText from '../PresentationalComponents/TriviaTitleText';
+import TriviaText from '../PresentationalComponents/TriviaText';
+import TriviaButton from '../PresentationalComponents/TriviaButton';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -51,61 +49,22 @@ class HomeScreen extends Component {
         clearTimeout(timerId);
       }, 200);
     } else if (nextProps.questions.length > 0) {
-      this.props.navigation.navigate('Quiz', { questionIndex: 0 });
+      this.props.navigation.navigate('Quiz');
     }
   }
 
   render() {
     return (
-      <View style={styles.container}>
+      <TriviaContainer>
         <Loader loading={this.state.showLoading} />
-        <Text style={styles.titleText}>Welcome to the Trivia Challenge!</Text>
-        <Text style={styles.text}>You will be presented with 10 True or False questions.</Text>
-        <Text style={styles.text}>Can you score 100%?</Text>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this.onPressBegin}
-        >
-          <Text style={styles.buttonText}>BEGIN</Text>
-        </TouchableHighlight>
-      </View>
+        <TriviaTitleText>Welcome to the Trivia Challenge!</TriviaTitleText>
+        <TriviaText>You will be presented with 10 True or False questions.</TriviaText>
+        <TriviaText>Can you score 100%?</TriviaText>
+        <TriviaButton onPress={this.onPressBegin}>BEGIN</TriviaButton>
+      </TriviaContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    backgroundColor: StyleUtils.LIGHT_SHADE_COLOR,
-  },
-  titleText: {
-    marginTop: 20,
-    textAlign: 'center',
-    color: StyleUtils.DARK_TEXT_COLOR,
-    fontWeight: 'bold',
-    fontSize: 34,
-  },
-  text: {
-    marginTop: 20,
-    textAlign: 'center',
-    color: StyleUtils.DARK_TEXT_COLOR,
-    fontSize: 30,
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: StyleUtils.DARK_SHADE_COLOR,
-    padding: 10,
-  },
-  buttonText: {
-    color: StyleUtils.LIGHT_TEXT_COLOR,
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-})
 
 const mapStateToProps = state => ({
   questions: state.questions,
