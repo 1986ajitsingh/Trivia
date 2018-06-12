@@ -125,7 +125,7 @@ describe('handleNewProps', () => {
           expect(mockClearTimeout).toBeCalled();
           break;
         case 2:
-          expect(mockNavigate).toBeCalledWith('Quiz', { questionIndex: 0 });
+          expect(mockNavigate).toBeCalledWith('Quiz');
           break;
         case 3:
           expect(mockSetTimeout).not.toBeCalled();
