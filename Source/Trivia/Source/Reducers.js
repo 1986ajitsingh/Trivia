@@ -1,5 +1,7 @@
 import * as ActionTypes from './Actions/ActionTypes';
 import * as APIUtils from './Utils/APIUtils';
+import answerQuestionReducer from './Reducers/AnswerQuestionReducer';
+import calculateTotalCorrectAnswersReducer from './Reducers/CalculateTotalCorrectAnswersReducer';
 
 const initialState = {
   questions: [],
@@ -22,54 +24,13 @@ export default function reducer(state = initialState, action) {
         error: APIUtils.FETCH_QUESTIONS_ERROR,
       };
     case ActionTypes.ANSWER_QUESTION:
-      return answerQuestionReducer(
-        state,
-        state.questions,
-        state.questionIndex,
-        action.payload.answer,
-      );
+      return answerQuestionReducer(state, action);
     case ActionTypes.RESET_QUESTIONS:
       return initialState;
     case ActionTypes.CALCULATE_TOTAL_CORRECT_ANSWERS:
-      return { ...state, totalCorrectAnswers: calculateTotalCorrectAnswersAction(state.questions) };
+      return calculateTotalCorrectAnswersReducer(state);
     default:
       return state;
   }
 }
 
-function answerQuestion(questions, questionIndex, answer) {
-  const question = (questions || [])[questionIndex];
-  (question || {}).given_answer = (answer || '');
-  return questions;
-}
-
-function answerQuestionReducer(state, questions, questionIndex, answer) {
-  let hasMoreUnansweredQuestions = true;
-  let nextQuestionIndex = 0;
-  if (questionIndex < (questions.length - 1)) {
-    nextQuestionIndex = questionIndex + 1;
-  } else {
-    hasMoreUnansweredQuestions = false;
-  }
-
-  return {
-    ...state,
-    questions: answerQuestion(
-      questions,
-      questionIndex,
-      answer,
-    ),
-    hasMoreUnansweredQuestions,
-    questionIndex: nextQuestionIndex,
-  };
-}
-
-function calculateTotalCorrectAnswersAction(questions) {
-  let totalCorrectAnswers = 0;
-  (questions || []).forEach((question) => {
-    if (question.correct_answer === question.given_answer) {
-      totalCorrectAnswers += 1;
-    }
-  });
-  return totalCorrectAnswers;
-}

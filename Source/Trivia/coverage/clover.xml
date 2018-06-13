@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1528887371038" clover="3.2.0">
-  <project timestamp="1528887371040" name="All files">
-    <metrics statements="123" coveredstatements="119" conditionals="46" coveredconditionals="40" methods="43" coveredmethods="38" elements="212" coveredelements="197" complexity="0" loc="123" ncloc="123" packages="5" files="18" classes="18">
+<coverage generated="1528890168301" clover="3.2.0">
+  <project timestamp="1528890168301" name="All files">
+    <metrics statements="126" coveredstatements="122" conditionals="46" coveredconditionals="40" methods="43" coveredmethods="38" elements="215" coveredelements="200" complexity="0" loc="126" ncloc="126" packages="6" files="20" classes="20">
       <package name="Source">
-        <metrics statements="23" coveredstatements="23" conditionals="20" coveredconditionals="17" methods="5" coveredmethods="5"/>
+        <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
         <file name="Reducers.js" path="/Users/globallogic/Documents/Ajit/Myself/Learning/ReactNative/Trivia/Github/code-challenge-ajit-singh/Source/Trivia/Source/Reducers.js">
-          <metrics statements="23" coveredstatements="23" conditionals="20" coveredconditionals="17" methods="5" coveredmethods="5"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="13" count="15" type="cond" truecount="7" falsecount="0"/>
-          <line num="15" count="2" type="stmt"/>
+          <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="15" count="15" type="cond" truecount="7" falsecount="0"/>
           <line num="17" count="2" type="stmt"/>
           <line num="19" count="2" type="stmt"/>
-          <line num="25" count="3" type="stmt"/>
-          <line num="32" count="2" type="stmt"/>
-          <line num="34" count="2" type="stmt"/>
-          <line num="36" count="2" type="stmt"/>
-          <line num="41" count="3" type="cond" truecount="1" falsecount="1"/>
-          <line num="42" count="3" type="cond" truecount="3" falsecount="1"/>
-          <line num="43" count="3" type="stmt"/>
-          <line num="47" count="3" type="stmt"/>
-          <line num="48" count="3" type="stmt"/>
-          <line num="49" count="3" type="cond" truecount="2" falsecount="0"/>
-          <line num="50" count="1" type="stmt"/>
-          <line num="52" count="2" type="stmt"/>
-          <line num="55" count="3" type="stmt"/>
-          <line num="68" count="2" type="stmt"/>
-          <line num="69" count="2" type="cond" truecount="1" falsecount="1"/>
-          <line num="70" count="3" type="cond" truecount="2" falsecount="0"/>
-          <line num="71" count="2" type="stmt"/>
-          <line num="74" count="2" type="stmt"/>
+          <line num="21" count="2" type="stmt"/>
+          <line num="27" count="3" type="stmt"/>
+          <line num="29" count="2" type="stmt"/>
+          <line num="31" count="2" type="stmt"/>
+          <line num="33" count="2" type="stmt"/>
         </file>
       </package>
       <package name="Source.Actions">
@@ -173,6 +159,32 @@
           <line num="10" count="4" type="stmt"/>
           <line num="13" count="4" type="stmt"/>
           <line num="17" count="4" type="stmt"/>
+        </file>
+      </package>
+      <package name="Source.Reducers">
+        <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="9" methods="4" coveredmethods="4"/>
+        <file name="AnswerQuestionReducer.js" path="/Users/globallogic/Documents/Ajit/Myself/Learning/ReactNative/Trivia/Github/code-challenge-ajit-singh/Source/Trivia/Source/Reducers/AnswerQuestionReducer.js">
+          <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
+          <line num="2" count="5" type="cond" truecount="1" falsecount="1"/>
+          <line num="3" count="5" type="cond" truecount="3" falsecount="1"/>
+          <line num="4" count="5" type="stmt"/>
+          <line num="8" count="5" type="stmt"/>
+          <line num="9" count="5" type="stmt"/>
+          <line num="11" count="5" type="stmt"/>
+          <line num="12" count="5" type="stmt"/>
+          <line num="13" count="5" type="cond" truecount="2" falsecount="0"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="16" count="3" type="stmt"/>
+          <line num="19" count="5" type="stmt"/>
+        </file>
+        <file name="CalculateTotalCorrectAnswersReducer.js" path="/Users/globallogic/Documents/Ajit/Myself/Learning/ReactNative/Trivia/Github/code-challenge-ajit-singh/Source/Trivia/Source/Reducers/CalculateTotalCorrectAnswersReducer.js">
+          <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="2" count="4" type="stmt"/>
+          <line num="3" count="4" type="stmt"/>
+          <line num="5" count="4" type="cond" truecount="1" falsecount="1"/>
+          <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="11" count="4" type="stmt"/>
         </file>
       </package>
       <package name="Source.Utils">
