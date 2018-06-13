@@ -55,7 +55,9 @@ class QuizScreen extends Component {
           questionText={(this.state.question || {}).question}
           onQuestionAnswered={this.handleOnQuestionAnswered}
         />
-        <TriviaText>{this.props.questionIndex + 1} of {this.props.questions.length}</TriviaText>
+        <TriviaText>{
+          this.props.questionIndex + 1} of {(this.props.questions || []).length}
+        </TriviaText>
       </TriviaContainer>
     );
   }

@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly normal 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E6E6FA",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 20,
+      "paddingVertical": 20,
+    }
+  }
+>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EE82EE40",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "space-around",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#4B0082",
+            "borderRadius": 10,
+            "display": "flex",
+            "height": 100,
+            "justifyContent": "space-around",
+            "width": 100,
+          }
+        }
+      >
+        <ActivityIndicator
+          animating={false}
+          color="#999999"
+          hidesWhenStopped={true}
+          size="large"
+        />
+      </View>
+    </View>
+  </Modal>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#4B0082",
+        "fontSize": 34,
+        "fontWeight": "bold",
+        "marginTop": 20,
+        "textAlign": "center",
+      }
+    }
+  >
+    Welcome to the Trivia Challenge!
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#4B0082",
+        "fontSize": 30,
+        "marginTop": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    You will be presented with 10 True or False questions.
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#4B0082",
+        "fontSize": 30,
+        "marginTop": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Can you score 100%?
+  </Text>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#4B0082",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      BEGIN
+    </Text>
+  </View>
+</View>
+`;

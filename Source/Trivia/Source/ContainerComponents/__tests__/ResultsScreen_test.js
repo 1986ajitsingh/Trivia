@@ -1,4 +1,6 @@
 import mockStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
+import React from 'react';
 import ModuleUnderTest from '../ResultsScreen';
 
 jest.mock('react-redux', () => ({
@@ -7,6 +9,23 @@ jest.mock('react-redux', () => ({
 
 const initialState = {};
 const store = mockStore(initialState);
+
+describe('renders correctly', () => {
+  /* eslint-disable no-undef */
+  test('normal', () => {
+    /* eslint-enable no-undef */
+    // Arrange/ Act
+    const mockCalculateTotalCorrectAnswers = jest.fn();
+    const tree =
+      renderer.create(<ModuleUnderTest
+        calculateTotalCorrectAnswers={mockCalculateTotalCorrectAnswers}
+      />).toJSON();
+
+    // Assert
+    expect(tree).toMatchSnapshot();
+    expect(mockCalculateTotalCorrectAnswers).toBeCalled();
+  });
+});
 
 describe('componentWillMount', () => {
   /* eslint-disable no-undef */

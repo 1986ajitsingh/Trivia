@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly normal 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E6E6FA",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 20,
+      "paddingVertical": 20,
+    }
+  }
+/>
+`;

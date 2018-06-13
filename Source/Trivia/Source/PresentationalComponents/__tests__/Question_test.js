@@ -1,4 +1,36 @@
+import renderer from 'react-test-renderer';
+import React from 'react';
 import ModuleUnderTest from '../Question';
+
+describe('renders correctly', () => {
+  /* eslint-disable no-undef */
+  test('normal', () => {
+    /* eslint-enable no-undef */
+    // Arrange/ Act
+    const mockFun = jest.fn();
+    const tree = renderer.create(<ModuleUnderTest onQuestionAnswered={mockFun} />).toJSON();
+
+    // Assert
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('constructor', () => {
+  /* eslint-disable no-undef */
+  test('normal', () => {
+    /* eslint-enable no-undef */
+    // Arrange
+    const expectedState = {
+      selectedSegment: 'none',
+    };
+
+    // Act
+    const moduleUnderTest = new ModuleUnderTest({});
+
+    // Assert
+    expect(moduleUnderTest.state).toEqual(expectedState);
+  });
+});
 
 describe('componentWillReceiveProps', () => {
   /* eslint-disable no-undef */

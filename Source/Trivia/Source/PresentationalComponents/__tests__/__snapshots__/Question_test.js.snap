@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly normal 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E6E6FA",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 20,
+      "paddingVertical": 20,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#4B0082",
+        "fontSize": 30,
+        "marginTop": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    No question text given
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#4B0082",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "backgroundColor": "#ffffff",
+              "opacity": 1,
+              "paddingBottom": 5,
+              "paddingTop": 5,
+            },
+            Object {
+              "flex": 1,
+            },
+          ],
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "textAlign": "center",
+            },
+            Object {
+              "fontSize": 24,
+              "marginBottom": 10,
+              "marginTop": 10,
+            },
+            Object {
+              "color": "#4B0082",
+            },
+          ]
+        }
+      >
+        True
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "opacity": 1,
+                "paddingBottom": 5,
+                "paddingTop": 5,
+              },
+              Object {
+                "flex": 1,
+              },
+            ],
+            Object {
+              "borderLeftColor": "#4B0082",
+              "borderLeftWidth": 1,
+            },
+          ],
+          undefined,
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "textAlign": "center",
+            },
+            Object {
+              "fontSize": 24,
+              "marginBottom": 10,
+              "marginTop": 10,
+            },
+            Object {
+              "color": "#4B0082",
+            },
+          ]
+        }
+      >
+        False
+      </Text>
+    </View>
+  </View>
+</View>
+`;

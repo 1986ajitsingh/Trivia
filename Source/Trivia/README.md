@@ -51,19 +51,24 @@ react-native run-android
 - [React native cli](https://www.npmjs.com/package/react-native-cli)
 
 ## Running the tests
-Run the following command to execute the Jest automation unit test suit. It will show the test report on the terminal window, and will also generate the code coverage report in the coverage folder. 
+Run the following command to execute the Jest unit test automation suit. It will show the test report on the terminal window, and will also generate the code coverage report in the coverage folder. 
 ```bash
 # Run following command
 npm test
 ```
-## Running the Device
+In case you have made changes in the JSX, you need to update the snapshot of the respective component using the following command.
+```bash
+# To update Snapshots
+npm test -- -u
+```
+## Running on the Device
 Given below are the high-level steps required to run the app on iOS and Android devices. For complete details please refer this [link](https://facebook.github.io/react-native/docs/running-on-device.html). 
-### 1. iOS
+### iOS
 - Plug in your device via USB
 - Configure code signing
 - Build and Run the app
 
-### 2. Android
+### Android
 - Enable Debugging over USB
 - Plug in your device via USB
 - Run your app
@@ -73,12 +78,13 @@ Following are the high-level steps required to deploy the app on Apple App Store
 ### iOS
 - Create App Store provisioning profile  
 - Register app on iTunes Connect
-- Add app icons and update launch image 
+- Add app icons and launch image 
 - Create app archive (IPA)
 - Upload the app to App Store via XCode 
 - Use Test Flight for Beta testing and Release
 ### Android 
 - Sign the app
+- Add app icons and launch image
 - Create release variant using following command 
 ```bash
 # To create Android Release variant
@@ -103,7 +109,7 @@ cd android && ./gradlew assembleRelease
 * [html-entities](https://github.com/mdevils/node-html-entities) - Html entities library. Used for HTML entities encoding/decoding. 
 * [prop-types](https://github.com/facebook/prop-types) - Runtime type checking for React props and similar objects.
 
-## Author - 
+## Author
 [**Ajit Singh**](https://www.linkedin.com/in/1986ajitsingh/
 ) - Poly-skilled Developer with hands-on expertise on the web and mobile platforms like React JS, React Native, iOS, and BREW, across domains like IoT, security, communication, and healthcare. 
 

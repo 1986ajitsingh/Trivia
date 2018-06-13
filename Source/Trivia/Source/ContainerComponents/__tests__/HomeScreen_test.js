@@ -1,5 +1,7 @@
 import mockStore from 'redux-mock-store';
 import { Alert } from 'react-native';
+import renderer from 'react-test-renderer';
+import React from 'react';
 import ModuleUnderTest from '../HomeScreen';
 
 jest.mock('react-redux', () => ({
@@ -8,6 +10,19 @@ jest.mock('react-redux', () => ({
 
 const initialState = {};
 const store = mockStore(initialState);
+
+describe('renders correctly', () => {
+  /* eslint-disable no-undef */
+  test('normal', () => {
+    /* eslint-enable no-undef */
+    // Arrange/ Act
+    const tree =
+      renderer.create(<ModuleUnderTest />).toJSON();
+
+    // Assert
+    expect(tree).toMatchSnapshot();
+  });
+});
 
 describe('constructor', () => {
   /* eslint-disable no-undef */

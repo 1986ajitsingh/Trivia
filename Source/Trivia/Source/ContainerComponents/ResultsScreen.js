@@ -50,7 +50,7 @@ class ResultsScreen extends Component {
     const { questions, totalCorrectAnswers } = this.props;
     return (
       <TriviaContainer>
-        <TriviaTitleText>You scored {'\n'} {totalCorrectAnswers} / {questions.length}</TriviaTitleText>
+        <TriviaTitleText>You scored {'\n'} {totalCorrectAnswers} / {(questions || []).length}</TriviaTitleText>
         <FlatList
           style={styles.list}
           data={questions}

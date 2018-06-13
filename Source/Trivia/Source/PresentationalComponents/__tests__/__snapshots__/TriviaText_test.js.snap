@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly normal 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#4B0082",
+      "fontSize": 30,
+      "marginTop": 10,
+      "textAlign": "center",
+    }
+  }
+>
+  Some Text
+</Text>
+`;
