@@ -8,10 +8,6 @@ import {
 // Custom files
 import * as StyleUtils from '../Utils/StyleUtils';
 
-const Entities = require('html-entities').AllHtmlEntities;
-
-const entities = new Entities();
-
 function getAnswerText(questionObj) {
   const question = (questionObj || {});
   let answerText = '-';
@@ -24,7 +20,7 @@ function getAnswerText(questionObj) {
 const ResultItem = props => (
   <View style={styles.container}>
     <Text style={styles.answerText}>{getAnswerText(props.question)}</Text>
-    <Text style={styles.questionText}>{entities.decode(props.question.question)}</Text>
+    <Text style={styles.questionText}>{props.question.question}</Text>
   </View>
 );
 

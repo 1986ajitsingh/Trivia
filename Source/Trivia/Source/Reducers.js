@@ -2,6 +2,7 @@ import * as ActionTypes from './Actions/ActionTypes';
 import * as APIUtils from './Utils/APIUtils';
 import answerQuestionReducer from './Reducers/AnswerQuestionReducer';
 import calculateTotalCorrectAnswersReducer from './Reducers/CalculateTotalCorrectAnswersReducer';
+import fetchQuestionsSuccessReducer from './Reducers/FetchQuestionsSuccessReducer';
 
 const initialState = {
   questions: [],
@@ -16,7 +17,7 @@ export default function reducer(state = initialState, action) {
     case ActionTypes.FETCH_QUESTIONS:
       return { ...state, loading: true };
     case ActionTypes.FETCH_QUESTIONS_SUCCESS:
-      return { ...state, loading: false, questions: action.payload.data.results };
+      return fetchQuestionsSuccessReducer(state, action);
     case ActionTypes.FETCH_QUESTIONS_FAIL:
       return {
         ...state,

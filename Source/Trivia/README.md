@@ -78,6 +78,7 @@ Following are the high-level steps required to deploy the app on Apple App Store
 ### iOS
 - Create App Store provisioning profile  
 - Register app on iTunes Connect
+- Create iTunes app content and screen shots
 - Add app icons and launch image 
 - Create app archive (IPA)
 - Upload the app to App Store via XCode 
@@ -96,6 +97,7 @@ react-native run-android --variant=release
 cd android && ./gradlew assembleRelease
 ```
 - Sign-up to [Google Play Store Developer Console](https://play.google.com/apps/publish/signup) for Beta testing and Release
+- Create Play Store app content and screen shots
 
 ## Built With
 * [react](https://github.com/facebook/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces. 

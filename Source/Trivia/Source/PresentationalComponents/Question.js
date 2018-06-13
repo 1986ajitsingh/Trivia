@@ -8,10 +8,6 @@ import * as StyleUtils from '../Utils/StyleUtils';
 import TriviaContainer from '../PresentationalComponents/TriviaContainer';
 import TriviaText from '../PresentationalComponents/TriviaText';
 
-const Entities = require('html-entities').AllHtmlEntities;
-
-const entities = new Entities();
-
 class Question extends Component {
   static options = ['True', 'False'];
 
@@ -44,7 +40,7 @@ class Question extends Component {
   render() {
     return (
       <TriviaContainer>
-        <TriviaText>{entities.decode(this.props.questionText)}</TriviaText>
+        <TriviaText>{this.props.questionText}</TriviaText>
         <SegmentedControls
           optionStyle={styles.segment}
           tint={StyleUtils.DARK_SHADE_COLOR}

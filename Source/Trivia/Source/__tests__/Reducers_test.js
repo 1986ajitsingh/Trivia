@@ -1,12 +1,25 @@
 import reducer from '../Reducers';
 import * as ActionTypes from '../Actions/ActionTypes';
 
+const payloadDataForFetchQuestionSuccess = {
+  data: {
+    results: [
+      {
+        category: 'cat 1', correct_answer: 'false', question: '&quot;question 1&quot;', extraField1: '1', extraField2: '2',
+      },
+      {
+        category: 'cat 2', correct_answer: 'false', question: 'question 2', extraField1: '1', extraField2: '2',
+      },
+    ],
+  },
+};
+
 describe('reducer', () => {
   [
     [1, '1. ActionType = FETCH_QUESTIONS, state is undefined', undefined, { type: ActionTypes.FETCH_QUESTIONS }],
     [2, '2. ActionType = FETCH_QUESTIONS, state has some value', { someValue: 'some value' }, { type: ActionTypes.FETCH_QUESTIONS }],
-    [3, '3. ActionType = FETCH_QUESTIONS_SUCCESS, state is undefined', undefined, { type: ActionTypes.FETCH_QUESTIONS_SUCCESS, payload: { data: { results: 'some results' } } }],
-    [4, '4. ActionType = FETCH_QUESTIONS_SUCCESS, state has some value', { someValue: 'some value' }, { type: ActionTypes.FETCH_QUESTIONS_SUCCESS, payload: { data: { results: 'some results' } } }],
+    [3, '3. ActionType = FETCH_QUESTIONS_SUCCESS, state is undefined', undefined, { type: ActionTypes.FETCH_QUESTIONS_SUCCESS, payload: payloadDataForFetchQuestionSuccess }],
+    [4, '4. ActionType = FETCH_QUESTIONS_SUCCESS, state has some value', { someValue: 'some value' }, { type: ActionTypes.FETCH_QUESTIONS_SUCCESS, payload: payloadDataForFetchQuestionSuccess }],
     [5, '5. ActionType = FETCH_QUESTIONS_FAIL, state is undefined', undefined, { type: ActionTypes.FETCH_QUESTIONS_FAIL }],
     [6, '6. ActionType = FETCH_QUESTIONS_FAIL, state has some value', { someValue: 'some value' }, { type: ActionTypes.FETCH_QUESTIONS_FAIL }],
     [7, '7. ActionType = ANSWER_QUESTION, state is undefined', undefined, { type: ActionTypes.ANSWER_QUESTION, payload: { questionIndex: 0, answer: 'False' } }],
@@ -45,11 +58,17 @@ describe('reducer', () => {
           break;
         case 3:
           expectedResult.loading = false;
-          expectedResult.questions = 'some results';
+          expectedResult.questions = [{ category: 'cat 1', correct_answer: 'false', question: '"question 1"' }, { category: 'cat 2', correct_answer: 'false', question: 'question 2' }];
           expect(result).toEqual(expectedResult);
           break;
-        case 4:
-          expect(result).toEqual({ loading: false, questions: 'some results', someValue: 'some value' });
+        case 4: {
+          const expectedResultForCase = {
+            loading: false,
+            questions: [{ category: 'cat 1', correct_answer: 'false', question: '"question 1"' }, { category: 'cat 2', correct_answer: 'false', question: 'question 2' }],
+            someValue: 'some value',
+          };
+          expect(result).toEqual(expectedResultForCase);
+        }
           break;
         case 5:
           expectedResult.error = 'Error while fetching questions';
