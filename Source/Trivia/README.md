@@ -5,7 +5,7 @@ Trivia is a simple Quiz Game, with 10 true or false questions, developed in Reac
 This project is a super helpful kit to kick-start your next React Native project, as it provides a lot of references and best practices for creating a React Native project from scratch. Some of these are:
 - Clear project structure
 - Usage of functional components
-- Handling shared stypes and themes
+- Handling shared styles and themes
 - Flux architecture - Using [Redux](https://redux.js.org/docs/introduction/)
 - Routing and navigation - Using [React Navigation](https://reactnavigation.org/)
 - Unit tests - Using [Jest](https://facebook.github.io/jest/)
@@ -16,7 +16,7 @@ This project is a super helpful kit to kick-start your next React Native project
 ![Trivia Game Flow](video/trivia_game_flow.gif "Trivia Game Flow")
 
 ## Getting Started
-It is recommended that you have the Prerequistes installed before following these steps. 
+It is recommended that you have the Prerequisites installed before following these steps. 
 ### 1. Clone and Install
 ```bash
 # Clone the repo
@@ -51,27 +51,25 @@ react-native run-android
 - [React native cli](https://www.npmjs.com/package/react-native-cli)
 
 ## Running the tests
-Run following command to execute the Jest automation unit test suit. It will show the test report on the terminal window, and will also generate the code coverage report in the coverage folder. 
+Run the following command to execute the Jest automation unit test suit. It will show the test report on the terminal window, and will also generate the code coverage report in the coverage folder. 
 ```bash
 # Run following command
 npm test
 ```
-[**Code Coverage Report**](coverage/lcov-report/index.html "Code Coverage Report")
 ## Running the Device
+Given below are the high-level steps required to run the app on iOS and Android devices. For complete details please refer this [link](https://facebook.github.io/react-native/docs/running-on-device.html). 
 ### 1. iOS
-Given below are the high level steps required to run the app on iOS device. For complete details please refer this [link](https://facebook.github.io/react-native/docs/running-on-device.html). 
 - Plug in your device via USB
 - Configure code signing
 - Build and Run the app
 
 ### 2. Android
-Given below are the high level steps required to run the app on Android device. For complete details please refer this [link](https://facebook.github.io/react-native/docs/running-on-device.html).
 - Enable Debugging over USB
 - Plug in your device via USB
 - Run your app
 
 ## Deployment on App Store/ Play Store
-Following are the high level steps required to deploy the app on Apple App Store and Google Play Store, for details please refer respective platform's official documentations. 
+Following are the high-level steps required to deploy the app on Apple App Store and Google Play Store, for details please refer respective platform's official documentation. 
 ### iOS
 - Create App Store provisioning profile  
 - Register app on iTunes Connect
@@ -107,7 +105,7 @@ cd android && ./gradlew assembleRelease
 
 ## Author - 
 [**Ajit Singh**](https://www.linkedin.com/in/1986ajitsingh/
-) - Poly-skilled Developer with handson expertise on web and mobile platforms like React JS, React Native, iOS, and BREW, across domains like IoT, security, communication, and healthcare. 
+) - Poly-skilled Developer with hands-on expertise on the web and mobile platforms like React JS, React Native, iOS, and BREW, across domains like IoT, security, communication, and healthcare. 
 
 ### Post by the author: 
 -  [*Blog*](https://www.globallogic.com/blogs/author/ajit-singh/)
@@ -117,6 +115,3 @@ cd android && ./gradlew assembleRelease
     - [Enabling Enterprise Collaboration Platforms with Mitel Embedded Communications (MiEC) SDK V6.0](https://www.globallogic.com/gl_news/enabling-enterprise-collaboration-platforms-with-mitel-embedded-communications-miec-sdk-v6-0/)
     - [Cashless India: Leveraging Possibilities and Facing Security Challenges In the Mobile Space](https://www.globallogic.com/gl_news/cashless-india-leveraging-possibilities-and-facing-security-challenges-in-the-mobile-space/)
     - [Smart Homes: A Deep Dive](https://www.globallogic.com/gl_news/smart-homes-a-deep-dive/)
-
-
-
