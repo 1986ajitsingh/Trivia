@@ -6,7 +6,7 @@ This project server as a reference for creating a React Native project from scra
 
 ## Trivia Game Flow
 
-![Trivia Game Flow](screenshots/trivia_game_flow.gif "Trivia Game Flow")
+![Trivia Game Flow](video/trivia_game_flow.gif "Trivia Game Flow")
 
 ## Getting Started
 
