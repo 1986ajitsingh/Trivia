@@ -1,70 +1,125 @@
-![The G2i Logo](screenshots/g2i-web-150px.png "The G2i logo")
+# Trivia - React Native Quiz Game
 
-# Trivia Game Coding Challenge
+Trivia is a simple Quiz Game, with 10 true or false questions, developed in React Native. This game is been developed as a Code Challenge for G2i, to showcase the abilities and impress.
 
-## Overview
+This project is a super helpful kit to kick-start your next React Native project, as it provides a lot of references and best practices for creating a React Native project from scratch. Some of these are:
+- Clear project structure
+- Usage of functional components
+- Handling shared styles and themes
+- Flux architecture - Using [Redux](https://redux.js.org/docs/introduction/)
+- Routing and navigation - Using [React Navigation](https://reactnavigation.org/)
+- Unit tests and Component Snapshot tests - Using [Jest](https://facebook.github.io/jest/)
+- Code Linting - Using [ESLint](https://eslint.org/) with [Airbnb's JS Linting](https://github.com/airbnb/javascript) guidelines
 
-Your challenge is to create a simple, 10 question, true or false, trivia app in the technology you are applying to work in. While the problem you are working on is simple, you should treat this like a real world application. This is a chance to show off your abilities and impress.
+## Trivia Game Flow
 
-**The application code will be reviewed and scored on these key areas with many subset areas for each:**
+![Trivia Game Flow](video/trivia_game_flow.gif "Trivia Game Flow")
 
-- Functionality
-- Code Format
-- Project Structure
-- Scalability
-- Maintainability
-- Use of industry best practices
+## Getting Started
+It is recommended that you have the Prerequisites installed before following these steps. 
+### 1. Clone and Install
+```bash
+# Clone the repo
+git clone https://github.com/g2i/code-challenge-ajit-singh.git
 
-## Goals
+# Goto to Trivia project folder
+cd Source/Trivia/
 
-Implement the screens based off the wireframes and api below using advanced techniques and industry best practices for your platform. Note that the wireframes may not be complete, so use your best judgment for UI/UX implementation. **Do not use a boilerplate like React Boilerplate or Ignite for this challenge.** We want to see how you structure your project and what tooling you use from scratch. Create react app or create react native app are fine to use.
-
-## Specifications
-
-Data:
-
-The api url is: https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean
-
-Sample returned json:
-
-```javascript
-{
-  "response_code": 0,
-  "results": [
-    {
-      "category": "Entertainment: Video Games",
-      "type": "boolean",
-      "difficulty": "hard",
-      "question": "Unturned originally started as a Roblox game.",
-      "correct_answer": "True",
-      "incorrect_answers": [
-        "False"
-      ]
-    },…]}
+# Install dependencies
+npm install
 ```
+### 2. Run on iOS Simulator
+```bash
+# This will launch iOS simulator and will launch the app
+react-native run-ios
+```
+### 3. Run on Android Emulator
+- Create an AVD (Android Virtual Device)
+- Make sure AVD is running
+- Run following command 
+```bash
+# This will launch the app in the AVD
+react-native run-android
+```
+### Prerequisites
+- [Node JS](https://nodejs.org/en/download/) 
+- [NPM](https://docs.npmjs.com/cli/install)
+- [Google Chrome - For debugging](https://www.google.com/chrome/)
+- [Xcode](https://developer.apple.com/xcode/)
+- [Android Studio](https://developer.android.com/studio/install)
+- [Watchman](https://facebook.github.io/watchman/docs/install.html)
+- [React native cli](https://www.npmjs.com/package/react-native-cli)
 
-### Intro / Home Screen:
+## Running the tests
+Run the following command to execute the Jest unit test automation suit. It will show the test report on the terminal window, and will also generate the code coverage report in the coverage folder. 
+```bash
+# Run following command
+npm test
+```
+In case you have made changes in the JSX, you need to update the snapshot of the respective component using the following command.
+```bash
+# To update Snapshots
+npm test -- -u
+```
+## Running on the Device
+Given below are the high-level steps required to run the app on iOS and Android devices. For complete details please refer this [link](https://facebook.github.io/react-native/docs/running-on-device.html). 
+### iOS
+- Plug in your device via USB
+- Configure code signing
+- Build and Run the app
 
-![The Intro screen for the app](screenshots/Intro.png "The Intro screen for the app")
+### Android
+- Enable Debugging over USB
+- Plug in your device via USB
+- Run your app
 
-- Static Text
-- BEGIN button navigates to the Quiz screen and starts the Quiz
+## Deployment on App Store/ Play Store
+Following are the high-level steps required to deploy the app on Apple App Store and Google Play Store, for details please refer respective platform's official documentation. 
+### iOS
+- Create App Store provisioning profile  
+- Register app on iTunes Connect
+- Create iTunes app content and screenshots
+- Add app icons and launch image 
+- Create app archive (IPA)
+- Upload the app to App Store via XCode 
+- Use Test Flight for Beta testing and Release
+### Android 
+- Sign the app
+- Add app icons and launch image
+- Create release variant using following command 
+```bash
+# To create Android Release variant
+react-native run-android --variant=release
+```
+- Generate the APK using following command
+```bash
+# Generate APK
+cd android && ./gradlew assembleRelease
+```
+- Sign-up to [Google Play Store Developer Console](https://play.google.com/apps/publish/signup) for Beta testing and Release
+- Create Play Store app content and screenshots
 
-### Quiz Screen:
+## Built With
+* [react](https://github.com/facebook/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces. 
+* [react-native](https://github.com/facebook/react-native) - A framework for building native apps with React.
+* [react-navigation](https://github.com/react-navigation/react-navigation) - Routing and navigation for your React Native apps.
+* [react-native-radio-buttons](https://github.com/ArnaudRinquin/react-native-radio-buttons) - A react component to implement radio buttons-like behaviors: multiple options, only one option can be selected at a given time.
+* [redux](https://github.com/reduxjs/redux) - Redux is a predictable state container for JavaScript apps.
+* [react-redux](https://github.com/reduxjs/react-redux) - Official React bindings for Redux.
+* [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+* [redux-axios-middleware](https://github.com/svrcekmichal/redux-axios-middleware) - Redux middleware for fetching data with axios HTTP client
+* [html-entities](https://github.com/mdevils/node-html-entities) - Html entities library. Used for HTML entities encoding/decoding. 
+* [prop-types](https://github.com/facebook/prop-types) - Runtime type checking for React props and similar objects.
 
-![The Quiz screen for the app](screenshots/Quiz.png "The Quiz screen for the app")
+## Author
+[**Ajit Singh**](https://www.linkedin.com/in/1986ajitsingh/
+) - Poly-skilled Developer with hands-on expertise on the web and mobile platforms like React JS, React Native, iOS, and BREW, across domains like IoT, security, communication, and healthcare. 
 
-- The headline is from question category
-- The card element contains the current question
-- The next question should appear after the current question is answered True or False
-- After all questions have been answered, navigate to the Results Screen
-
-### Results screen:
-
-![The Results screen for the app](screenshots/Score.png "The Results screen for the app")
-
-- The Score shows correct and total
-- Displays a list of the questions and whether the answer was correct or not
-- PLAY AGAIN starts over and navigates to the Home Screen
-----
-© 2018 G2i Inc.  All rights reserved.  Certain information contained herein is derived from information which is protected by copyrights held by G2i Inc. This code challenge, including any parts of it, cannot be duplicated, distributed, copied, modified, used to make a derivative work or used in any way without the prior written consent of G2i Inc.
+### Post by the author: 
+-  [*Blog*](https://www.globallogic.com/blogs/author/ajit-singh/)
+- *Whitepapers*
+    - [Mobile Application Architecture: React Native with Redux](https://www.globallogic.com/gl_news/mobile-application-architecture-react-native-with-redux/)
+    - [A Review of React Native for Cross-platform Mobile Application Development](https://www.globallogic.com/gl_news/a-review-of-react-native-for-cross-platform/)
+    - [Enabling Enterprise Collaboration Platforms with Mitel Embedded Communications (MiEC) SDK V6.0](https://www.globallogic.com/gl_news/enabling-enterprise-collaboration-platforms-with-mitel-embedded-communications-miec-sdk-v6-0/)
+    - [Cashless India: Leveraging Possibilities and Facing Security Challenges In the Mobile Space](https://www.globallogic.com/gl_news/cashless-india-leveraging-possibilities-and-facing-security-challenges-in-the-mobile-space/)
+    - [Smart Homes: A Deep Dive](https://www.globallogic.com/gl_news/smart-homes-a-deep-dive/)
